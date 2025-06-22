@@ -20,7 +20,6 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 
 public class ExtentListenerClass implements ITestListener{
-
 	ExtentSparkReporter  htmlReporter;
 	ExtentReports reports;
 	ExtentTest test;
@@ -44,10 +43,7 @@ public class ExtentListenerClass implements ITestListener{
 		htmlReporter.config().setDocumentTitle("Extent Listener Report Demo");
 		htmlReporter.config().setReportName("This is my First Report");
 		htmlReporter.config().setTheme(Theme.DARK);
-		
-		
 	}
-
 	//OnStart method is called when any Test starts.
 	public void onStart(ITestContext Result)					
 	{		
@@ -62,9 +58,6 @@ public class ExtentListenerClass implements ITestListener{
 		reports.flush();//it is mandatory to call flush method to ensure information is written to the started reporter.
 
 	}		
-
-
-
 	// When Test case get failed, this method is called.		
 
 	public void onTestFailure(ITestResult Result) 					
@@ -120,7 +113,4 @@ public class ExtentListenerClass implements ITestListener{
 	{		
 
 	}		
-	
-
-	
 }

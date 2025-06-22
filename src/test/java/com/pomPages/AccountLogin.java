@@ -45,6 +45,5 @@ public void enterinLoginName(String uname) {
 public void enterinLoginPass(String pas) {
 	pass.sendKeys(pas);
 	loginButton.click();
-	
 }
 }

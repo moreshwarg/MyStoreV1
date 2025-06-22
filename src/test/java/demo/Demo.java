@@ -1,30 +1,22 @@
 package demo;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.Set;
-
 public class Demo {
 
 	public static void main(String[] args) {
-		String str="Moreshwarrrr";
-		char ch[]=str.toCharArray();
-		HashMap<Character, Integer>hm=new HashMap<>();
-		for(char w:ch) {
-			if(hm.containsKey(w)) {
-				hm.put(w, hm.get(w)+1);
+		// 10,0,50,0,0,12,0
+		int a[]= {10,0,50,0,0,12,0};
+		int count=0;
+		
+			for(int j=0;j<a.length-1;j++) {
+				if(a[j]==0) {
+					for(int jj=j;jj<a.length-1;jj++) {
+						a[jj]=a[jj+1];
+					}
+				}
 			}
-			else {
-				hm.put(w, 1);
+				
+			for(int k=0;k<a.length;k++) {
+				System.out.print(a[k]);
 			}
 		}
-System.out.println(hm);
-Set<Entry<Character,Integer>>kvs=hm.entrySet();
-for(Entry<Character,Integer>kv:kvs) {
-	if(kv.getValue()>=2) {
-		System.out.println(kv.getKey());
 	}
-}
-	}
-
-}

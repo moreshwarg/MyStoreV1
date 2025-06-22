@@ -33,11 +33,8 @@ public class TC_MS_MyAccount extends BaseClass{
 		 Thread.sleep(2000);
 		 ca.entringLoginCred("Moresh", "moresh@123", "moresh@123");
 		 Thread.sleep(2000);
-
 	}
-	
-	@Test(enabled=false,dataProvider = "LoginDataProvider")
-	
+	@Test(enabled=false,dataProvider = "LoginDataProvider")	
 	public void verifyLogin(String uname,String pwd,String expectedName) throws IOException {
 		al= new AccountLogin(driver);
 		al.accLoginMenu();
@@ -71,8 +68,6 @@ public class TC_MS_MyAccount extends BaseClass{
 
 			int ttlRows = ReadExcelFile.getRowCount(fileName, "LoginTestData");
 			int ttlColumns = ReadExcelFile.getColCount(fileName, "LoginTestData");
-		
-
 			String data[][]=new String[ttlRows-1][ttlColumns];
 
 			for(int i=1;i<ttlRows;i++)//rows =1,2

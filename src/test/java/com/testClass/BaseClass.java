@@ -21,9 +21,6 @@ import com.utilities.ReadConfig;
 public class BaseClass {
 	private static  Logger logger = LogManager.getLogger(BaseClass.class);
 	WebDriver driver;
-	 
-	
-		
 		 ReadConfig readConfig= new ReadConfig();
 		String brow=readConfig.getBrowser();
 		  String ur=readConfig.getUrl();
@@ -59,10 +56,11 @@ public void tearDown() {
 	driver.quit();
 }
 public void captureScreenShot(WebDriver driver,String testName) throws IOException {
-	TakesScreenshot screenshot=((TakesScreenshot)driver);
+TakesScreenshot screenshot=((TakesScreenshot)driver);
 File src=	screenshot.getScreenshotAs(OutputType.FILE);
 File dest=new File(System.getProperty("user.dir")+"//screenshot//"+testName+".png");
 FileUtils.copyFile(src, dest);  
+
 
 }
 }
